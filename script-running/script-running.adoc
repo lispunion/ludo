@@ -1,0 +1,28 @@
+= Ludo nnn
+:toc: macro
+:toc-title:
+
+== Title
+
+*Script running survey*
+
+== Author
+
+TODO
+
+== Status
+
+Draft
+
+== Table of contents
+
+toc::[]
+
+== Abstract
+
+This document presents a survey of how to run Unix command line
+scripts on many different implementations of several Lisp dialects.
+
+== Rationale
+
+== Specification
