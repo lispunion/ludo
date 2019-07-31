@@ -1,0 +1,13 @@
+= Lisp Union documents
+
+This is a repository for written reports of cross-Lisp work:
+
+* Lightweight standards
+* Explorations
+* Proposals
+* Surveys
+* etc.
+
+Whenever it makes sense, documents in this repo should track
+equivalent documents in the document repos of particular Lisp
+dialects: Scheme SRFI, Common Lisp CDR, etc.
