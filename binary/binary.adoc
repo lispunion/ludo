@@ -1,0 +1,34 @@
+= Ludo nnn
+:toc: macro
+:toc-title:
+
+== Title
+
+*Binary S-expressions*
+
+== Author
+
+TODO
+
+== Status
+
+Draft
+
+== Table of contents
+
+toc::[]
+
+== Abstract
+
+This document defines a portable binary encoding for extended
+S-expressions. It can encode every kind of object in the syntax of
+every major Lisp dialect. Additionally, it can encode all of JSON,
+YAML and XML.
+
+Variable-length encoding is used for all number and length fields, so
+there are no length limits. The native character encoding is UTF-8 but
+other encodings are supported via encoding tags.
+
+== Rationale
+
+== Specification
