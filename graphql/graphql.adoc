@@ -20,13 +20,24 @@ toc::[]
 
 == Abstract
 
-This SRFI defines a S-expression mapping for GraphQL documents. A
+This document defines a S-expression mapping for GraphQL documents. A
 document can contain both query and schema material, so this
 encompasses all of the GraphQL grammar.
 
 == Rationale
 
 === Prior art
+
+[options="header"]
+|=======
+|Language|Repo|Main author
+|Clojure|walmartlabs/lacinia|Howard M. Lewis Ship
+|Clojure|alumbra/alumbra|Yannick Scherer
+|ClojureScript|r0man/grafeo|r0man
+|Common Lisp|Shinmera/cl-graphql|Nicolas Hafner
+|Emacs Lisp|vermiculus/graphql.el|Sean Allred
+|Emacs Lisp|davazp/graphql-mode|David Vázquez Púa
+|=======
 
 ==== Clojure: Lacinia
 
@@ -104,6 +115,8 @@ Directives
     (graphql-query
      ((object :arguments ((someVariable . ((someComplex . "object")
                                            (with . ($ complexNeeds))))))))
+
+==== Emacs Lisp: graphql-mode
 
 == Specification
 
