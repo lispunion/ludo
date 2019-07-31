@@ -1,0 +1,29 @@
+= Ludo nnn
+:toc: macro
+:toc-title:
+
+== Title
+
+*Schema definition language for S-expressions*
+
+== Author
+
+TODO
+
+== Status
+
+Draft
+
+== Table of contents
+
+toc::[]
+
+== Abstract
+
+This document defines a simple S-expression-based language for
+defining schemas for other S-expression-based languages. As a joke and
+self-check, the language's schema is defined in itself.
+
+== Rationale
+
+== Specification
