@@ -1,0 +1,51 @@
+= Ludo nnn
+:toc: macro
+:toc-title:
+
+== Title
+
+*The declare-file form*
+
+== Author
+
+TODO
+
+== Status
+
+Draft
+
+== Table of contents
+
+toc::[]
+
+== Abstract
+
+This document introduces the `(declare-file ...)` form that can be put
+near the beginning of a text file containing S-expressions. This form
+is meant as a cross-Lisp standard to annotate a source file with
+metadata.
+
+Metadata is traditionally encoded as magic comments for which there
+are countless ad hoc syntaxes. Since Lisp syntax is made out of a
+naturally extensible notation, S-expressions, we can do better than
+that and standardize an S-expression-based solution instead.
+
+The solution is designed to fit easily into existing Common Lisp,
+Scheme, Clojure, Emacs Lisp, NewLisp and Rep source files.
+
+== Rationale
+
+=== Prior art
+
+==== Emacs
+
+* `-*-` line
+* local variables section
+* package keywords
+* lexical-binding comment
+
+== Specification
+
+=== Finding and parsing the declare-file form
+
+== Examples
