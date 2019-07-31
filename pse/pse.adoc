@@ -1,0 +1,28 @@
+= Ludo nnn
+:toc: macro
+:toc-title:
+
+== Title
+
+*Portable S-expressions*
+
+== Author
+
+TODO
+
+== Status
+
+Draft
+
+== Table of contents
+
+toc::[]
+
+== Abstract
+
+This document defines a portable syntax for S-expressions. Many Lisp
+dialects are surveyed and a simple lingua franca is extracted.
+
+== Rationale
+
+== Specification
