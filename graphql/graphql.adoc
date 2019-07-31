@@ -1,0 +1,152 @@
+= Ludo nnn
+:toc: macro
+:toc-title:
+
+== Title
+
+*GraphQL representation*
+
+== Author
+
+TODO
+
+== Status
+
+Draft
+
+== Table of contents
+
+toc::[]
+
+== Abstract
+
+This SRFI defines a S-expression mapping for GraphQL documents. A
+document can contain both query and schema material, so this
+encompasses all of the GraphQL grammar.
+
+== Rationale
+
+=== Prior art
+
+==== Clojure: Lacinia
+
+==== Clojure: Alumbra
+
+==== ClojureScript: grafeo
+
+Aliases
+
+    (((empireHero hero)
+        [(episode EMPIRE)]
+        name)
+       ((jediHero hero)
+        [(episode JEDI)]
+        name))
+
+Arguments
+
+    ((human
+         [(id "1000")]
+         name
+         (height [(unit FOOT)])))
+
+Arguments type
+
+    ((type
+        Starship
+        (id ID!)
+        (name String!)
+        (length [(unit LengthUnit METER)] Float)))
+
+Default variables
+
+    ((query
+         HeroNameAndFriends
+         [($episode Episode JEDI)]
+         (hero
+          [(episode $episode)]
+          name
+          (friends name)))
+
+Directives
+
+    ((query
+         Hero
+         [($episode Episode)
+          ($withFriends Boolean!)]
+         (hero
+          [(episode $episode)]
+          name
+          (friends
+           ((include [(if $withFriends)]))
+           name))))
+
+==== Common Lisp: cl-graphql
+
+==== Emacs Lisp: graphql.el
+
+    (graphql-query
+     (myField1 myField2 (myEdges (edges (node myField3)))))
+
+    (graphql-query
+     ((viewer login)
+      (rateLimit limit cost remaining resetAt)))
+
+    (graphql-query
+     ((repository
+       :arguments ((owner . "github")
+                   (name . ($ repo)))
+       (issues :arguments ((first . 20)
+                           (states . [OPEN CLOSED]))
+               (edges
+                (node number title url id))))))
+
+    (graphql-query
+     ((object :arguments ((someVariable . ((someComplex . "object")
+                                           (with . ($ complexNeeds))))))))
+
+== Specification
+
+=== Types
+
+Root object type:
+
+    (define-schema (directives)
+      (<root-operation-type*> <named-type>)
+      ...)
+
+Object type:
+
+    (define-type (<name> (implements ...) (directives ...))
+      [<docstring>]
+      <fields>)
+
+Interface:
+
+    (interface
+
+=== Operations
+
+Operation:
+
+    (query|mutation|subscription <name|#f> (<variables> @ <directives>)
+      <selection*>)
+
+Field:
+
+    <field-name>
+
+    (field (<field-name> <argument*> <directive*>)
+      <selection*)
+
+Field with alias:
+
+    (alias <alias-name> <field>)
+
+Argument
+
+    (name value)
+
+== Examples
+
+    (query
